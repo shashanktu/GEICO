@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ValueMomentum Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+           
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .services-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .service-box {
+            width: calc(33.33% - 20px);
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e1e1e1;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            display: block;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .show {
+            display: block;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+        
+        <h1>CLOUD FINOPS MANAGEMENT</h1>
+    </header>
+
+    <section>
+        <h2>Welcome to our FinOps Team Homepage!</h2>
+        
+        <p>Explore our services and resources below:</p>
+        
+        <button onclick="scrollToServices()">Explore Services</button>
+    </section>
+
+    <!-- Add an anchor tag for the services section -->
+    <section id="services">
+        <h2>Our Services</h2>
+
+        <div class="services-container">
+            <!-- Service Box 1 -->
+            <div class="service-box">
+                <h3>Policy</h3>
+                <p>Description of Service 1...</p>
+                <button onclick="redirectToValidator()">Policy</button>
+                                                
+                </div>
+
+            <!-- Service Box 2 -->
+            <div class="service-box">
+                <h3>Tagging</h3>
+                <p>Description of Service 2...</p>
+                <!-- <button onclick="scrollToServices()">Tagging</button> -->
+                <div class="dropdown">
+                    <button onclick="toggleDropdown('taggingDropdown')">Tagging</button>
+                    <div id="taggingDropdown" class="dropdown-content">
+                        <a href="tagged.HTML">Overall Tagging</a>
+                        <a href="untagged.html">Untagged</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Box 3 -->
+            <div class="service-box">
+                <h3>Approval</h3>
+                <p>Description of Service 3...</p>
+                <button onclick="scrollToServices()">Approval</button>
+            </div>
+
+            
+        </div>
+        <div class="services-container">
+            <!-- Service Box 1 -->
+            <div class="service-box">
+                <h3>Cost Compaign</h3>
+                <p>Description of Service 1...</p>
+                <button onclick="scrollToServices()">Cost Campaign</button>
+            </div>
+
+            <!-- Service Box 2 -->
+            <div class="service-box">
+                <h3>Audits</h3>
+                <p>Description of Service 2...</p>
+                <button onclick="scrollToServices()">Audits</button>
+            </div>
+
+            <!-- Service Box 3 -->
+            <div class="service-box">
+                <h3>Reports</h3>
+                <p>Description of Service 3...</p>
+                <button onclick="scrollToServices()">Reports</button>
+            </div>
+
+            
+        </div>
+
+    </section>
+
+    <script>
+
+
+function redirectToValidator() {
+            window.location.href = "p2.html";
+        }
+
+        function scrollToServices() {
+            // Smooth scroll to the services section
+            document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
+        }
+
+    
+
+        function redirectToUntagged() {
+            window.location.href = "tagged.html";
+        }
+
+        function toggleDropdown(dropdownId) {
+            var dropdownContent = document.getElementById(dropdownId);
+            dropdownContent.classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropdown button')) {
+                var dropdowns = document.getElementsByClassName('dropdown-content');
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+    </script>
+
+</body>
+</html>
