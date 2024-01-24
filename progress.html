@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .progress-container {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .box {
+    flex: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    margin-right: 20px;
+  }
+
+  h2 {
+    color: #333;
+  }
+
+  #myProgress1,
+  #myProgress2 {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  #myBar1,
+  #myBar2 {
+    height: 30px;
+    background-color: #04AA6D;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    transition: width 0.5s ease;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+</style>
+<body>
+
+<div class="progress-container">
+  <div class="box">
+    <h2>Overall Tag Count</h2>
+    <div id="myProgress1">
+      <div id="myBar1">45%</div>
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>Overall Tag Governance</h2>
+    <div id="myProgress2">
+      <div id="myBar2">45%</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
